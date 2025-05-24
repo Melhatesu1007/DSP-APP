@@ -92,4 +92,14 @@ def main():
             st.text("Time (s)")
             st.text("Energy")
 
-            # Subplot 3: Heart Rate
+            # Subplot 3: Heart Rate Display
+            st.subheader('Heart Rate Display')
+            if not np.isnan(heart_rate):
+                st.markdown(f'**Estimated Heart Rate:  {heart_rate:.2f} BPM**')
+            else:
+                st.markdown('**Could not estimate heart rate.**')
+        else:
+            st.write('No audio file loaded.')
+
+if __name__ == "__main__":
+    main()
